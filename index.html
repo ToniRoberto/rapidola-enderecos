@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Endereços - Rapidola</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <!-- Header -->
+        <header class="bg-primary text-white py-4 mb-4">
+            <div class="container">
+                <h1 class="mb-0"><i class="bi bi-geo-alt-fill"></i> Catálogo de Endereços Rapidola</h1>
+                <p class="mb-0 mt-2">Selecione o tipo de localização e encontre os endereços disponíveis</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <div class="container">
+            <!-- Breadcrumb Navigation -->
+            <nav aria-label="breadcrumb" class="mb-4">
+                <ol class="breadcrumb" id="breadcrumb">
+                    <li class="breadcrumb-item active" aria-current="page">Início</li>
+                </ol>
+            </nav>
+
+            <!-- Cliente Search Screen -->
+            <div id="cliente-search" class="selection-screen">
+                <div class="card shadow-sm">
+                    <div class="card-body p-4">
+                        <h2 class="card-title text-center mb-4">
+                            <i class="bi bi-person-search text-primary"></i> Buscar Cliente
+                        </h2>
+                        <div class="mb-4">
+                            <div class="input-group input-group-lg">
+                                <span class="input-group-text"><i class="bi bi-search"></i></span>
+                                <input type="text" class="form-control" id="cliente-search-input" placeholder="Digite o nome do cliente...">
+                            </div>
+                            <small class="text-muted mt-2 d-block">
+                                <i class="bi bi-info-circle"></i> Digite o nome do cliente para buscar
+                            </small>
+                        </div>
+                        
+                        <!-- Cliente Results -->
+                        <div id="cliente-results" class="d-none">
+                            <h5 class="mb-3">Resultado da Busca:</h5>
+                            <div class="row" id="cliente-cards">
+                                <!-- Cliente cards will be dynamically inserted here -->
+                            </div>
+                        </div>
+
+                        <!-- No Results Message -->
+                        <div id="no-results-cliente" class="alert alert-warning d-none">
+                            <i class="bi bi-exclamation-triangle"></i> Nenhum cliente encontrado com esse nome.
+                        </div>
+
+                        <!-- Divider -->
+                        <hr class="my-4">
+
+                        <!-- Option to browse by location -->
+                        <div class="text-center">
+                            <p class="text-muted mb-3">Ou navegue por localização:</p>
+                            <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                                <button class="btn btn-outline-primary" id="browse-centro-comercial">
+                                    <i class="bi bi-building"></i> Centro Comercial
+                                </button>
+                                <button class="btn btn-outline-success" id="browse-cidade-alta">
+                                    <i class="bi bi-geo-alt"></i> Cidade Alta
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Endereços Vinculados Screen (for clients with linked addresses) -->
+            <div id="enderecos-vinculados" class="selection-screen d-none">
+                <div class="card shadow-sm">
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <div>
+                                <h2 class="mb-1">
+                                    <i class="bi bi-geo-alt-fill text-primary"></i> Endereços Vinculados
+                                </h2>
+                                <p class="text-muted mb-0" id="enderecos-cliente-name"></p>
+                            </div>
+                            <button class="btn btn-outline-secondary" id="back-to-cliente-search-enderecos">
+                                <i class="bi bi-arrow-left"></i> Voltar
+                            </button>
+                        </div>
+                        
+                        <!-- Search Box -->
+                        <div class="mb-4">
+                            <div class="input-group input-group-lg">
+                                <span class="input-group-text"><i class="bi bi-search"></i></span>
+                                <input type="text" class="form-control" id="enderecos-search" placeholder="Buscar endereço...">
+                            </div>
+                            <small class="text-muted mt-2 d-block">
+                                <i class="bi bi-info-circle"></i> Digite o nome do endereço para filtrar os resultados
+                            </small>
+                        </div>
+
+                        <!-- Endereços Cards -->
+                        <div class="row g-3" id="enderecos-cards">
+                            <!-- Endereços cards will be dynamically inserted here -->
+                        </div>
+
+                        <!-- No Results Message -->
+                        <div id="no-results-enderecos" class="alert alert-info d-none">
+                            <i class="bi bi-info-circle"></i> Nenhum endereço encontrado com os critérios de busca.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Taxa Única Screen (for clients with unique value) -->
+            <div id="taxa-unica" class="selection-screen d-none">
+                <div class="card shadow-sm">
+                    <div class="card-body p-5">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <div>
+                                <h2 class="mb-1">
+                                    <i class="bi bi-currency-dollar text-success"></i> Taxa Única
+                                </h2>
+                                <p class="text-muted mb-0" id="taxa-unica-cliente-name"></p>
+                            </div>
+                            <button class="btn btn-outline-secondary" id="back-to-cliente-search-taxa">
+                                <i class="bi bi-arrow-left"></i> Voltar
+                            </button>
+                        </div>
+                        
+                        <div class="text-center py-5">
+                            <div class="display-1 text-success mb-4">
+                                <i class="bi bi-check-circle-fill"></i>
+                            </div>
+                            <h3 class="mb-3">Taxa Única Aplicada</h3>
+                            <div class="taxa-value-display">
+                                <span class="badge bg-success badge-lg fs-2 px-4 py-3">
+                                    <i class="bi bi-currency-dollar me-2"></i>
+                                    Valor: R$ <span id="taxa-unica-value">0,00</span>
+                                </span>
+                            </div>
+                            <p class="text-muted mt-4">
+                                Este cliente possui uma taxa única e não precisa selecionar entre Centro Comercial ou Cidade Alta.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Destination Selection Screen (after client selection) -->
+            <div id="destination-selection" class="selection-screen d-none">
+                <div class="row justify-content-center">
+                    <div class="col-md-10 col-lg-8">
+                        <div class="card shadow-sm">
+                            <div class="card-body p-4">
+                                <div class="d-flex justify-content-between align-items-center mb-4">
+                                    <div>
+                                        <h2 class="mb-1">
+                                            <i class="bi bi-geo-alt-fill text-primary"></i> Selecionar Destino
+                                        </h2>
+                                        <p class="text-muted mb-0" id="selected-cliente-name"></p>
+                                    </div>
+                                    <button class="btn btn-outline-secondary" id="back-to-cliente-search">
+                                        <i class="bi bi-arrow-left"></i> Voltar
+                                    </button>
+                                </div>
+                                
+                                <div class="row g-4 mt-2">
+                                    <div class="col-md-6">
+                                        <div class="card selection-card h-100" data-destination="centro-comercial">
+                                            <div class="card-body text-center p-5">
+                                                <i class="bi bi-building display-1 text-primary mb-3"></i>
+                                                <h3 class="card-title">Centro Comercial</h3>
+                                                <p class="card-text">Visualize endereços disponíveis nos centros comerciais</p>
+                                                <button class="btn btn-primary btn-lg mt-3">
+                                                    Selecionar <i class="bi bi-arrow-right"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="card selection-card h-100" data-destination="cidade-alta">
+                                            <div class="card-body text-center p-5">
+                                                <i class="bi bi-geo-alt display-1 text-success mb-3"></i>
+                                                <h3 class="card-title">Cidade Alta</h3>
+                                                <p class="card-text">Visualize endereços disponíveis na cidade alta</p>
+                                                <button class="btn btn-success btn-lg mt-3">
+                                                    Selecionar <i class="bi bi-arrow-right"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Selection Type Screen (for direct navigation) -->
+            <div id="type-selection" class="selection-screen d-none">
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="card selection-card h-100" data-type="centro-comercial">
+                            <div class="card-body text-center p-5">
+                                <i class="bi bi-building display-1 text-primary mb-3"></i>
+                                <h3 class="card-title">Centro Comercial</h3>
+                                <p class="card-text">Visualize endereços disponíveis nos centros comerciais</p>
+                                <button class="btn btn-primary btn-lg mt-3">
+                                    Selecionar <i class="bi bi-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card selection-card h-100" data-type="cidade-alta">
+                            <div class="card-body text-center p-5">
+                                <i class="bi bi-geo-alt display-1 text-success mb-3"></i>
+                                <h3 class="card-title">Cidade Alta</h3>
+                                <p class="card-text">Visualize endereços disponíveis na cidade alta</p>
+                                <button class="btn btn-success btn-lg mt-3">
+                                    Selecionar <i class="bi bi-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Location List Screen -->
+            <div id="location-list" class="selection-screen d-none">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h2 id="location-type-title" class="mb-0"></h2>
+                    <button class="btn btn-outline-secondary" id="back-to-type">
+                        <i class="bi bi-arrow-left"></i> Voltar
+                    </button>
+                </div>
+                <div class="row g-3" id="location-cards">
+                    <!-- Location cards will be dynamically inserted here -->
+                </div>
+            </div>
+
+            <!-- Bairros List Screen (Cidade Alta) -->
+            <div id="bairros-list" class="selection-screen d-none">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h2 class="mb-0">Cidade Alta - Bairros</h2>
+                    <button class="btn btn-outline-secondary" id="back-to-type-bairros">
+                        <i class="bi bi-arrow-left"></i> Voltar
+                    </button>
+                </div>
+                
+                <!-- Search Box -->
+                <div class="mb-4">
+                    <div class="input-group input-group-lg">
+                        <span class="input-group-text"><i class="bi bi-search"></i></span>
+                        <input type="text" class="form-control" id="bairro-search" placeholder="Buscar bairro...">
+                    </div>
+                    <small class="text-muted mt-2 d-block">
+                        <i class="bi bi-info-circle"></i> Digite o nome do bairro para filtrar os resultados
+                    </small>
+                </div>
+
+                <!-- Bairros Cards -->
+                <div class="row g-3" id="bairros-cards">
+                    <!-- Bairro cards will be dynamically inserted here -->
+                </div>
+
+                <!-- No Results Message -->
+                <div id="no-results-bairros" class="alert alert-info d-none">
+                    <i class="bi bi-info-circle"></i> Nenhum bairro encontrado com os critérios de busca.
+                </div>
+            </div>
+
+            <!-- Address List Screen -->
+            <div id="address-list" class="selection-screen d-none">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <div>
+                        <h2 id="location-name-title" class="mb-0"></h2>
+                        <p class="text-muted mb-0" id="location-type-subtitle"></p>
+                    </div>
+                    <button class="btn btn-outline-secondary" id="back-to-location">
+                        <i class="bi bi-arrow-left"></i> Voltar
+                    </button>
+                </div>
+                
+                <!-- Search Box -->
+                <div class="mb-4">
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="bi bi-search"></i></span>
+                        <input type="text" class="form-control" id="address-search" placeholder="Buscar endereço...">
+                    </div>
+                </div>
+
+                <!-- Address Cards -->
+                <div class="row g-3" id="address-cards">
+                    <!-- Address cards will be dynamically inserted here -->
+                </div>
+
+                <!-- No Results Message -->
+                <div id="no-results" class="alert alert-info d-none">
+                    <i class="bi bi-info-circle"></i> Nenhum endereço encontrado com os critérios de busca.
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="bg-light mt-5 py-4">
+            <div class="container text-center">
+                <p class="mb-0 text-muted">&copy; 2024 Rapidola - Catálogo de Endereços</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
