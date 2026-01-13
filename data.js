@@ -20,7 +20,7 @@ const catalogData = {
         { id: 12, name: "Floresta (7ª rua até 14ª rua) (KM3)", taxValue: 8.00 },
         { id: 13, name: "Jardim tapajós (ao redor v.militar)", taxValue: 8.00 },
         { id: 14, name: "Santo Antônio", taxValue: 8.00 },
-        { id: 15, name: "São Francisco (a partir da 4ª rua)", taxValue: 8.00 },
+        { id: 26, name: "São Francisco (1ª rua até 3ª rua)", taxValue: 8.00 },
         { id: 16, name: "Vila Militar", taxValue: 8.00 },
         
         // R$ 10,00 (ordem alfabética)
@@ -33,7 +33,7 @@ const catalogData = {
         { id: 23, name: "Novo Paraiso", taxValue: 10.00 },
         { id: 24, name: "Piracanã (ATÉ 29 RUA)", taxValue: 10.00 },
         { id: 25, name: "REICON", taxValue: 10.00 },
-        { id: 26, name: "São Francisco (1ª rua até 3ª rua)", taxValue: 10.00 },
+        { id: 15, name: "São Francisco (a partir da 4ª rua)", taxValue: 10.00 },
         { id: 27, name: "Vitória-régia", taxValue: 10.00 },
         
         // R$ 12,00 (ordem alfabética)
@@ -75,8 +75,8 @@ const catalogData = {
         { id: 12, name: "Floresta (7ª rua até 14ª rua) (KM3)", taxValue: 8.00 },
         { id: 13, name: "Jardim tapajós (ao redor v.militar)", taxValue: 8.00 },
         { id: 14, name: "Santo Antônio", taxValue: 8.00 },
-        { id: 15, name: "São Francisco (a partir da 4ª rua)", taxValue: 8.00 },
         { id: 16, name: "Vila Militar", taxValue: 8.00 },
+        { id: 25, name: "São Francisco (1ª rua até 3ª rua)", taxValue: 8.00 },
         
         // R$ 10,00 (ordem alfabética)
         { id: 17, name: "Bairro da paz", taxValue: 10.00 },
@@ -87,12 +87,12 @@ const catalogData = {
         { id: 22, name: "Novo Paraiso", taxValue: 10.00 },
         { id: 23, name: "Piracanã (ATÉ 29 RUA)", taxValue: 10.00 },
         { id: 24, name: "REICON", taxValue: 10.00 },
-        { id: 25, name: "São Francisco (1ª rua até 3ª rua)", taxValue: 10.00 },
+        { id: 15, name: "São Francisco (a partir da 4ª rua)", taxValue: 10.00 },
         { id: 26, name: "Vitória-régia", taxValue: 10.00 },
+        { id: 28, name: "Bairro da coca", taxValue: 10.00 },
         
         // R$ 12,00 (ordem alfabética)
-        { id: 27, name: "Açai", taxValue: 12.00 },
-        { id: 28, name: "Bairro da coca", taxValue: 12.00 },
+        { id: 27, name: "Açai", taxValue: 12.00 },        
         { id: 29, name: "Beco da Shell", taxValue: 12.00 },
         { id: 30, name: "Belas terras (km6)", taxValue: 12.00 },
         { id: 31, name: "Bom jardim", taxValue: 12.00 },
@@ -514,4 +514,5 @@ function searchClientes(searchTerm) {
 function getAllClientes() {
     return clientes;
 }
+
 
