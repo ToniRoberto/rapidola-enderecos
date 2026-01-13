@@ -227,7 +227,7 @@ const enderecosEspecial = {
         // R$ 8,00
         { id: 11, name: "Floresta (7ª rua até 14ª rua) (KM3)", taxValue: 8.00 },
         { id: 12, name: "Jardim tapajós (ao redor v.militar)", taxValue: 8.00 },
-        { id: 13, name: "São Francisco (a partir da 4ª rua)", taxValue: 8.00 },
+        { id: 23, name: "São Francisco (1ª rua até 3ª rua)", taxValue: 8.00 },
         { id: 14, name: "Vila Militar", taxValue: 8.00 },
         
         // R$ 10,00
@@ -239,7 +239,7 @@ const enderecosEspecial = {
         { id: 20, name: "Novo Paraiso", taxValue: 10.00 },
         { id: 21, name: "Piracanã (ATÉ 29 RUA)", taxValue: 10.00 },
         { id: 22, name: "REICON", taxValue: 10.00 },
-        { id: 23, name: "São Francisco (1ª rua até 3ª rua)", taxValue: 10.00 },
+        { id: 13, name: "São Francisco (a partir da 4ª rua)", taxValue: 10.00 },
         { id: 24, name: "São José (vila caçula/vila nova)", taxValue: 10.00 },
         { id: 25, name: "Vitória-régia", taxValue: 10.00 },
         
@@ -353,7 +353,7 @@ const enderecosEspecial = {
         { id: 22, name: "Novo Paraiso", taxValue: 10.00 },
         { id: 23, name: "Piracanã (ATÉ 29 RUA)", taxValue: 10.00 },
         { id: 24, name: "Santo Antônio", taxValue: 10.00 },
-        { id: 25, name: "São Francisco (1ª rua até 3ª rua)", taxValue: 10.00 },
+        { id: 25, name: "São Francisco (1ª rua até 3ª rua)", taxValue: 8.00 },
         { id: 26, name: "São Francisco (a partir da 4ª rua)", taxValue: 10.00 },
         
         // R$ 12,00
@@ -514,5 +514,6 @@ function searchClientes(searchTerm) {
 function getAllClientes() {
     return clientes;
 }
+
 
 
