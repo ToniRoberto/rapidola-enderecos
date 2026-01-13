@@ -1,0 +1,264 @@
+:root {
+    --primary-color: #0d6efd;
+    --secondary-color: #198754;
+    --card-hover-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    --transition-speed: 0.3s;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-fluid {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.selection-screen {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.selection-card {
+    border: 2px solid transparent;
+    transition: all var(--transition-speed) ease;
+    cursor: pointer;
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.selection-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--card-hover-shadow);
+    border-color: var(--primary-color);
+}
+
+.selection-card[data-type="centro-comercial"]:hover {
+    border-color: var(--primary-color);
+}
+
+.selection-card[data-type="cidade-alta"]:hover {
+    border-color: var(--secondary-color);
+}
+
+.location-card {
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    transition: all var(--transition-speed) ease;
+    cursor: pointer;
+    height: 100%;
+}
+
+.location-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--card-hover-shadow);
+    border-color: var(--primary-color);
+}
+
+.location-card .card-body {
+    padding: 1.5rem;
+}
+
+.address-card {
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    transition: all var(--transition-speed) ease;
+    border-left: 4px solid var(--primary-color);
+}
+
+.address-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateX(5px);
+}
+
+.address-card .card-body {
+    padding: 1.25rem;
+}
+
+.bairro-card {
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    transition: all var(--transition-speed) ease;
+    border-left: 4px solid var(--primary-color);
+    height: 100%;
+}
+
+.bairro-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-3px);
+}
+
+.bairro-card .card-body {
+    padding: 1.5rem;
+}
+
+.tax-value-display {
+    margin-top: 1rem;
+}
+
+.badge-lg {
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
+    font-weight: 600;
+}
+
+.cliente-result-card {
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    transition: all var(--transition-speed) ease;
+    border-left: 4px solid var(--primary-color);
+}
+
+.cliente-result-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateX(5px);
+}
+
+.cliente-result-card .card-body {
+    padding: 1.25rem;
+}
+
+.address-info {
+    display: flex;
+    align-items: start;
+    gap: 1rem;
+}
+
+.address-icon {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    flex-shrink: 0;
+}
+
+.address-details h5 {
+    margin-bottom: 0.5rem;
+    color: #212529;
+}
+
+.address-details p {
+    margin-bottom: 0.25rem;
+    color: #6c757d;
+}
+
+.badge-custom {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.75rem;
+}
+
+/* Breadcrumb styling */
+.breadcrumb {
+    background-color: #e9ecef;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+}
+
+.breadcrumb-item a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+.breadcrumb-item a:hover {
+    text-decoration: underline;
+}
+
+/* Search input styling */
+#address-search {
+    border-radius: 8px;
+}
+
+.input-group-text {
+    background-color: #f8f9fa;
+    border-right: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .selection-card .card-body {
+        padding: 2rem 1.5rem !important;
+    }
+    
+    .selection-card .display-1 {
+        font-size: 3rem;
+    }
+    
+    header h1 {
+        font-size: 1.5rem;
+    }
+    
+    header p {
+        font-size: 0.9rem;
+    }
+    
+    .d-flex.justify-content-between {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .d-flex.justify-content-between h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    .selection-card .card-body {
+        padding: 1.5rem 1rem !important;
+    }
+    
+    .address-card .card-body {
+        padding: 1rem;
+    }
+    
+    .address-info {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+/* Loading state */
+.loading {
+    text-align: center;
+    padding: 3rem;
+}
+
+.spinner-border {
+    width: 3rem;
+    height: 3rem;
+}
+
+/* Empty state */
+.empty-state {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: #6c757d;
+}
+
+.empty-state i {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+}
+
