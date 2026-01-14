@@ -26,6 +26,7 @@ const catalogData = {
         // R$ 10,00 (ordem alfabética)
         { id: 17, name: "Bairro da coca", taxValue: 10.00 },
         { id: 18, name: "Bairro da paz", taxValue: 10.00 },
+        { id: 19, name: "Beija Flor", taxValue: 10.00 },
         { id: 20, name: "Bom jardim", taxValue: 10.00 },
         { id: 21, name: "Irajá (MORRO DO MACACO)", taxValue: 10.00 },
         { id: 22, name: "Laranjal", taxValue: 10.00 },
@@ -40,7 +41,6 @@ const catalogData = {
         { id: 29, name: "Beco da Shell", taxValue: 12.00 },
         { id: 30, name: "Belas terras (km6)", taxValue: 12.00 },
         { id: 31, name: "Buriti", taxValue: 12.00 },
-        { id: 19, name: "Beija Flor", taxValue: 12.00 },
         { id: 32, name: "Campo belo", taxValue: 12.00 },
         { id: 33, name: "Chico do Leite", taxValue: 12.00 },
         { id: 34, name: "Cidade nova (JJP)", taxValue: 12.00 },
@@ -80,6 +80,7 @@ const catalogData = {
         
         // R$ 10,00 (ordem alfabética)
         { id: 17, name: "Bairro da paz", taxValue: 10.00 },
+        { id: 18, name: "Beija Flor", taxValue: 10.00 },
         { id: 19, name: "Floresta (PEDREIRA)", taxValue: 10.00 },
         { id: 20, name: "Irajá (MORRO DO MACACO)", taxValue: 10.00 },
         { id: 21, name: "Laranjal", taxValue: 10.00 },
@@ -94,7 +95,6 @@ const catalogData = {
         { id: 27, name: "Açai", taxValue: 12.00 },        
         { id: 29, name: "Beco da Shell", taxValue: 12.00 },
         { id: 30, name: "Belas terras (km6)", taxValue: 12.00 },
-        { id: 18, name: "Beija Flor", taxValue: 12.00 },
         { id: 31, name: "Bom jardim", taxValue: 12.00 },
         { id: 32, name: "Buriti", taxValue: 12.00 },
         { id: 33, name: "Campo belo", taxValue: 12.00 },
@@ -165,18 +165,18 @@ const clientes = [
     { id: 2, name: "BBSAURO HAMBURGUER", referencia: "CENTRO" },
     { id: 3, name: "BIS BURGER", referencia: "CENTRO" },
     { id: 4, name: "BOM PÃO", referencia: "CENTRO" },
-    { id: 5, name: "BOX BURGER", referencia: "CENTRO" },
+    { id: 5, name: "BOX BURGER", referencia: "CIDADEALTA" },
     { id: 6, name: "CAFÉ GOIANO", referencia: "CIDADEALTA" },
     { id: 7, name: "CALÇADA DAS OLIVEIRAS", referencia: "CIDADEALTA" },
     { id: 8, name: "CASA DO PASTEL", referencia: "CIDADEALTA" },
     { id: 9, name: "CHIQUINHO SORVETES", referencia: "CENTRO" },
     { id: 10, name: "DELICIAS DO CHEFF", referencia: "CENTRO" },
-    { id: 11, name: "DOM HAMBURGUERIA (100 SOLICITAÇÕES)", referencia: "CENTRO" },
+    { id: 11, name: "DOM HAMBURGUERIA", referencia: "CENTRO" },
     { id: 12, name: "DROGARIA PAG BEM MENOS - 16 RUA", referencia: "ENDERECOS_VINCULADOS" },
     { id: 13, name: "DROGARIA PAG BEM MENOS - 7 RUA", referencia: "ENDERECOS_VINCULADOS" },
     { id: 14, name: "DROGARIA PAG BEM MENOS - TRANSAMAZONICA", referencia: "ENDERECOS_VINCULADOS" },
     { id: 15, name: "DROGARIA PRIME", referencia: "CENTRO" },
-    { id: 16, name: "ÉGUA DA PIZZA (120 SOLICITAÇÕES)", referencia: "CIDADEALTA" },
+    { id: 16, name: "ÉGUA DA PIZZA", referencia: "CIDADEALTA" },
     { id: 17, name: "ESSENCIAL INFORMÁTICA", referencia: "CENTRO" },
     { id: 18, name: "HOLY BURGER", referencia: "CENTRO" },
     { id: 19, name: "KI DELICIAS", referencia: "CENTRO" },
@@ -185,9 +185,9 @@ const clientes = [
     { id: 22, name: "PICANHA & CIA", referencia: "CENTRO" },
     { id: 23, name: "PLENITUDE MODAS", referencia: "CIDADEALTA" },
     { id: 24, name: "REI DO CARNEIRO", referencia: "CENTRO" },
-    { id: 25, name: "RESTAURANTE DO MEU JEITO", referencia: "CENTRO" },
+    { id: 25, name: "RESTAURANTE DO MEU JEITO", referencia: "ENDERECOS_VINCULADOS" },
     { id: 26, name: "RESTAURANTE O LIBERAL", referencia: "CENTRO" },
-    { id: 27, name: "ROCKET BURGER (LANCOS)", referencia: "CENTRO" },
+    { id: 27, name: "LANCOS", referencia: "CENTRO" },
     { id: 28, name: "SABOR DA HORA PIZZARIA", referencia: "ENDERECOS_VINCULADOS" },
     { id: 29, name: "SABOR E ARTE", referencia: "CENTRO" },
     { id: 30, name: "SABOREY", referencia: "CENTRO" },
@@ -210,6 +210,7 @@ const clientes = [
     { id: 46, name: "KOALA PIZZARIA", referencia: "ENDERECOS_VINCULADOS" },
     { id: 47, name: "KIPUDIN", referencia: "ENDERECOS_VINCULADOS" },
     { id: 48, name: "NATURELLI COZINHA CRIATIVA", referencia: "FLORESTA" },
+    { id: 50, name: "Peixe Na Brasa - Ginásio", referencia: "CIDADEALTA" },
 ];
 
 // Endereços vinculados ao cliente ESPET. MARIDO & MULHER
@@ -886,6 +887,118 @@ const enderecosEspecial = {
         { id: 45, name: "Valmirlândia 1 e 2", taxValue: 12.00 },
         { id: 46, name: "Viva itaituba (km6)", taxValue: 12.00 },
         { id: 47, name: "Wirland Freire", taxValue: 12.00 },
+    ],
+    "Peixe Na Brasa - Ginásio": [
+        // R$ 7,00 (ordem alfabética)
+        { id: 1, name: "Bela vista", taxValue: 7.00 },
+        { id: 2, name: "Boa esperança", taxValue: 7.00 },
+        { id: 3, name: "Bom remédio", taxValue: 7.00 },
+        { id: 4, name: "Centro", taxValue: 7.00 },
+        { id: 5, name: "Cidade baixa", taxValue: 7.00 },
+        { id: 6, name: "Floresta (1ª rua até 6ª rua)", taxValue: 7.00 },
+        { id: 7, name: "Jardim das araras", taxValue: 7.00 },
+        { id: 8, name: "Liberdade", taxValue: 7.00 },
+        { id: 9, name: "Perpétuo socorro", taxValue: 7.00 },
+        { id: 10, name: "São José (vila caçula/vila nova)", taxValue: 7.00 },
+        { id: 11, name: "São Tomé", taxValue: 7.00 },
+        
+        // R$ 8,00 (ordem alfabética)
+        { id: 12, name: "Floresta (7ª rua até 14ª rua) (KM3)", taxValue: 8.00 },
+        { id: 13, name: "Jardim tapajós (ao redor v.militar)", taxValue: 8.00 },
+        { id: 14, name: "Santo Antônio", taxValue: 8.00 },
+        { id: 15, name: "São Francisco (1ª rua até 3ª rua)", taxValue: 8.00 },
+        { id: 16, name: "Vila Militar", taxValue: 8.00 },
+        
+        // R$ 10,00 (ordem alfabética)
+        { id: 17, name: "Bairro da coca", taxValue: 10.00 },
+        { id: 18, name: "Bairro da paz", taxValue: 10.00 },
+        { id: 19, name: "Beija Flor", taxValue: 10.00 },
+        { id: 20, name: "Floresta (PEDREIRA)", taxValue: 10.00 },
+        { id: 21, name: "Irajá (MORRO DO MACACO)", taxValue: 10.00 },
+        { id: 22, name: "Laranjal", taxValue: 10.00 },
+        { id: 23, name: "Novo Paraiso", taxValue: 10.00 },
+        { id: 24, name: "Piracanã (ATÉ 29 RUA)", taxValue: 10.00 },
+        { id: 25, name: "REICON", taxValue: 10.00 },
+        { id: 26, name: "São Francisco (a partir da 4ª rua)", taxValue: 10.00 },
+        { id: 27, name: "Vitória-régia", taxValue: 10.00 },
+        
+        // R$ 12,00 (ordem alfabética)
+        { id: 28, name: "Açai", taxValue: 12.00 },
+        { id: 29, name: "Beco da Shell", taxValue: 12.00 },
+        { id: 30, name: "Belas terras (km6)", taxValue: 12.00 },
+        { id: 31, name: "Bom jardim", taxValue: 12.00 },
+        { id: 32, name: "Buriti", taxValue: 12.00 },
+        { id: 33, name: "Campo belo", taxValue: 12.00 },
+        { id: 34, name: "Chico do Leite", taxValue: 12.00 },
+        { id: 35, name: "Cidade nova (JJP)", taxValue: 12.00 },
+        { id: 36, name: "Jacarézinho", taxValue: 12.00 },
+        { id: 37, name: "Jardim aeroporto (km5)", taxValue: 12.00 },
+        { id: 38, name: "Jardim américa (altos buriti)", taxValue: 12.00 },
+        { id: 39, name: "Maria Magdalena 1 e 2", taxValue: 12.00 },
+        { id: 40, name: "Pérola do tapajós", taxValue: 12.00 },
+        { id: 41, name: "QUARTEL 53 BIS", taxValue: 12.00 },
+        { id: 42, name: "Sol Nascente", taxValue: 12.00 },
+        { id: 43, name: "Vale do piracanã (residêncial)", taxValue: 12.00 },
+        { id: 44, name: "Vale do tapajós", taxValue: 12.00 },
+        { id: 45, name: "Valmirlândia 1 e 2", taxValue: 12.00 },
+        { id: 46, name: "Viva itaituba (km6)", taxValue: 12.00 },
+        { id: 47, name: "Wirland Freire", taxValue: 12.00 },
+    ],
+    "RESTAURANTE DO MEU JEITO": [
+        // R$ 7,00
+        { id: 1, name: "Bela vista", taxValue: 7.00 },
+        { id: 2, name: "Boa esperança", taxValue: 7.00 },
+        { id: 3, name: "Bom jardim", taxValue: 7.00 },
+        { id: 4, name: "Centro", taxValue: 7.00 },
+        { id: 5, name: "Cidade baixa", taxValue: 7.00 },
+        { id: 6, name: "Floresta (1ª rua até 6ª rua)", taxValue: 7.00 },
+        { id: 7, name: "Jardim das araras", taxValue: 7.00 },
+        { id: 8, name: "Jardim tapajós (ao redor v.militar)", taxValue: 7.00 },
+        { id: 9, name: "Liberdade", taxValue: 7.00 },
+        { id: 10, name: "Perpétuo socorro", taxValue: 7.00 },
+        { id: 11, name: "São José (vila caçula/vila nova)", taxValue: 7.00 },
+        { id: 12, name: "São Tomé", taxValue: 7.00 },
+        
+        // R$ 8,00
+        { id: 13, name: "Bom remédio", taxValue: 8.00 },
+        { id: 14, name: "Floresta (7ª rua até 14ª rua) (KM3)", taxValue: 8.00 },
+        { id: 15, name: "Floresta (PEDREIRA)", taxValue: 8.00 },
+        { id: 16, name: "São Francisco (1ª rua até 3ª rua)", taxValue: 8.00 },
+        
+        // R$ 10,00
+        { id: 17, name: "Bairro da coca", taxValue: 10.00 },
+        { id: 18, name: "Bairro da paz", taxValue: 10.00 },
+        { id: 19, name: "Beco da Shell", taxValue: 10.00 },
+        { id: 20, name: "Irajá (MORRO DO MACACO)", taxValue: 10.00 },
+        { id: 21, name: "Laranjal", taxValue: 10.00 },
+        { id: 22, name: "Novo Paraiso", taxValue: 10.00 },
+        { id: 23, name: "Piracanã (ATÉ 29 RUA)", taxValue: 10.00 },
+        { id: 24, name: "REICON", taxValue: 10.00 },
+        { id: 25, name: "Santo Antônio", taxValue: 10.00 },
+        { id: 26, name: "São Francisco (a partir da 4ª rua)", taxValue: 10.00 },
+        { id: 27, name: "Vila Militar", taxValue: 10.00 },
+        
+        // R$ 12,00
+        { id: 28, name: "Açai", taxValue: 12.00 },
+        { id: 29, name: "Beija Flor", taxValue: 12.00 },
+        { id: 30, name: "Belas terras (km6)", taxValue: 12.00 },
+        { id: 31, name: "Buriti", taxValue: 12.00 },
+        { id: 32, name: "Campo belo", taxValue: 12.00 },
+        { id: 33, name: "Cidade nova (JJP)", taxValue: 12.00 },
+        { id: 34, name: "Chico do Leite", taxValue: 12.00 },
+        { id: 35, name: "Jacarézinho", taxValue: 12.00 },
+        { id: 36, name: "Jardim aeroporto (km5)", taxValue: 12.00 },
+        { id: 37, name: "Jardim américa (altos buriti)", taxValue: 12.00 },
+        { id: 38, name: "Maria Magdalena 1 e 2", taxValue: 12.00 },
+        { id: 39, name: "Pérola do tapajós", taxValue: 12.00 },
+        { id: 40, name: "Sol Nascente", taxValue: 12.00 },
+        { id: 41, name: "Vale do piracanã (residêncial)", taxValue: 12.00 },
+        { id: 42, name: "Vale do tapajós", taxValue: 12.00 },
+        { id: 43, name: "Valmirlândia 1 e 2", taxValue: 12.00 },
+        { id: 44, name: "Vitória-régia", taxValue: 12.00 },
+        { id: 45, name: "Viva itaituba (km6)", taxValue: 12.00 },
+        { id: 46, name: "Wirland Freire", taxValue: 12.00 },
+        { id: 47, name: "QUARTEL 53 BIS", taxValue: 12.00 },
     ]
 };
 
@@ -915,7 +1028,6 @@ function searchClientes(searchTerm) {
 function getAllClientes() {
     return clientes;
 }
-
 
 
 
