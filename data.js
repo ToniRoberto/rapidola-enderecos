@@ -450,9 +450,8 @@ const enderecosEspecial = {
         { id: 8, name: "Santo Antônio", taxValue: 7.00 },
         { id: 9, name: "São Francisco (1ª rua até 3ª rua)", taxValue: 7.00 },
         { id: 10, name: "São Tomé", taxValue: 7.00 },
-        { id: 11, name: "Vale do piracanã (residêncial)", taxValue: 7.00 },
-        { id: 12, name: "Vale do tapajós", taxValue: 7.00 },
-        { id: 13, name: "Valmirlândia 1 e 2", taxValue: 7.00 },
+        { id: 19, name: "Vitória-régia", taxValue: 7.00 },
+        
         
         // R$ 8,00
         { id: 14, name: "Bela vista (9º RUA - 1º RUA)", taxValue: 8.00 },
@@ -460,10 +459,12 @@ const enderecosEspecial = {
         { id: 16, name: "Jardim das araras", taxValue: 8.00 },
         { id: 17, name: "Liberdade", taxValue: 8.00 },
         { id: 18, name: "São Francisco (a partir da 4ª rua)", taxValue: 8.00 },
-        { id: 19, name: "Vitória-régia", taxValue: 8.00 },
         
         // R$ 10,00
         { id: 20, name: "Bairro da coca", taxValue: 10.00 },
+        { id: 11, name: "Vale do piracanã (residêncial)", taxValue: 10.00 },
+        { id: 12, name: "Vale do tapajós", taxValue: 10.00 },
+        { id: 13, name: "Valmirlândia 1 e 2", taxValue: 10.00 },
         { id: 21, name: "Bairro da paz", taxValue: 10.00 },
         { id: 22, name: "Boa esperança", taxValue: 10.00 },
         { id: 23, name: "Bom jardim", taxValue: 10.00 },
