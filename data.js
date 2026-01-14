@@ -172,9 +172,9 @@ const clientes = [
     { id: 9, name: "CHIQUINHO SORVETES", referencia: "CENTRO" },
     { id: 10, name: "DELICIAS DO CHEFF", referencia: "CENTRO" },
     { id: 11, name: "DOM HAMBURGUERIA (100 SOLICITAÇÕES)", referencia: "CENTRO" },
-    { id: 12, name: "DROGARIA PAG BEM MENOS - 16 RUA", referencia: "FLORESTA" },
-    { id: 13, name: "DROGARIA PAG BEM MENOS - 7 RUA", referencia: "FLORESTA" },
-    { id: 14, name: "DROGARIA PAG BEM MENOS - TRANSAMAZONICA", referencia: "FLORESTA" },
+    { id: 12, name: "DROGARIA PAG BEM MENOS - 16 RUA", referencia: "CIDADEALTA" },
+    { id: 13, name: "DROGARIA PAG BEM MENOS - 7 RUA", referencia: "CIDADEALTA" },
+    { id: 14, name: "DROGARIA PAG BEM MENOS - TRANSAMAZONICA", referencia: "CIDADEALTA" },
     { id: 15, name: "DROGARIA PRIME", referencia: "CENTRO" },
     { id: 16, name: "ÉGUA DA PIZZA (120 SOLICITAÇÕES)", referencia: "CIDADEALTA" },
     { id: 17, name: "ESSENCIAL INFORMÁTICA", referencia: "CENTRO" },
@@ -747,6 +747,7 @@ function searchClientes(searchTerm) {
 function getAllClientes() {
     return clientes;
 }
+
 
 
 
