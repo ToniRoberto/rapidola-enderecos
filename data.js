@@ -26,7 +26,6 @@ const catalogData = {
         // R$ 10,00 (ordem alfabética)
         { id: 17, name: "Bairro da coca", taxValue: 10.00 },
         { id: 18, name: "Bairro da paz", taxValue: 10.00 },
-        { id: 19, name: "Beija Flor", taxValue: 10.00 },
         { id: 20, name: "Bom jardim", taxValue: 10.00 },
         { id: 21, name: "Irajá (MORRO DO MACACO)", taxValue: 10.00 },
         { id: 22, name: "Laranjal", taxValue: 10.00 },
@@ -41,6 +40,7 @@ const catalogData = {
         { id: 29, name: "Beco da Shell", taxValue: 12.00 },
         { id: 30, name: "Belas terras (km6)", taxValue: 12.00 },
         { id: 31, name: "Buriti", taxValue: 12.00 },
+        { id: 19, name: "Beija Flor", taxValue: 12.00 },
         { id: 32, name: "Campo belo", taxValue: 12.00 },
         { id: 33, name: "Chico do Leite", taxValue: 12.00 },
         { id: 34, name: "Cidade nova (JJP)", taxValue: 12.00 },
@@ -80,7 +80,6 @@ const catalogData = {
         
         // R$ 10,00 (ordem alfabética)
         { id: 17, name: "Bairro da paz", taxValue: 10.00 },
-        { id: 18, name: "Beija Flor", taxValue: 10.00 },
         { id: 19, name: "Floresta (PEDREIRA)", taxValue: 10.00 },
         { id: 20, name: "Irajá (MORRO DO MACACO)", taxValue: 10.00 },
         { id: 21, name: "Laranjal", taxValue: 10.00 },
@@ -95,6 +94,7 @@ const catalogData = {
         { id: 27, name: "Açai", taxValue: 12.00 },        
         { id: 29, name: "Beco da Shell", taxValue: 12.00 },
         { id: 30, name: "Belas terras (km6)", taxValue: 12.00 },
+        { id: 18, name: "Beija Flor", taxValue: 12.00 },
         { id: 31, name: "Bom jardim", taxValue: 12.00 },
         { id: 32, name: "Buriti", taxValue: 12.00 },
         { id: 33, name: "Campo belo", taxValue: 12.00 },
@@ -915,6 +915,7 @@ function searchClientes(searchTerm) {
 function getAllClientes() {
     return clientes;
 }
+
 
 
 
