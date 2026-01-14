@@ -161,7 +161,7 @@ function searchBairros(searchTerm, type) {
 
 // Dados de clientes
 const clientes = [
-    { id: 1, name: "BIDAS BURGUER", referencia: "LIBERDADE" },
+    { id: 1, name: "BIDAS BURGUER", referencia: "ENDERECOS_VINCULADOS" },
     { id: 2, name: "BBSAURO HAMBURGUER", referencia: "CENTRO" },
     { id: 3, name: "BIS BURGER", referencia: "CENTRO" },
     { id: 4, name: "BOM PÃO", referencia: "CENTRO" },
@@ -606,6 +606,62 @@ const enderecosEspecial = {
         { id: 46, name: "Viva itaituba (km6)", taxValue: 12.00 },
         { id: 47, name: "Wirland Freire", taxValue: 12.00 },
         { id: 48, name: "QUARTEL 53 BIS", taxValue: 12.00 },
+    ],
+    "BIDAS BURGUER": [
+        // R$ 7,00
+        { id: 1, name: "Bela vista", taxValue: 7.00 },
+        { id: 2, name: "Boa esperança", taxValue: 7.00 },
+        { id: 3, name: "Bom jardim", taxValue: 7.00 },
+        { id: 4, name: "Centro", taxValue: 7.00 },
+        { id: 5, name: "Cidade baixa", taxValue: 7.00 },
+        { id: 6, name: "Floresta (1ª rua até 6ª rua)", taxValue: 7.00 },
+        { id: 7, name: "Jardim das araras", taxValue: 7.00 },
+        { id: 8, name: "Jardim tapajós (ao redor v.militar)", taxValue: 7.00 },
+        { id: 9, name: "Liberdade", taxValue: 7.00 },
+        { id: 10, name: "Perpétuo socorro", taxValue: 7.00 },
+        { id: 11, name: "São José (vila caçula/vila nova)", taxValue: 7.00 },
+        { id: 12, name: "São Tomé", taxValue: 7.00 },
+        
+        // R$ 8,00
+        { id: 13, name: "Bom remédio", taxValue: 8.00 },
+        { id: 14, name: "Floresta (7ª rua até 14ª rua) (KM3)", taxValue: 8.00 },
+        { id: 15, name: "Floresta (PEDREIRA)", taxValue: 8.00 },
+        { id: 16, name: "São Francisco (1ª rua até 3ª rua)", taxValue: 8.00 },
+        
+        // R$ 10,00
+        { id: 17, name: "Bairro da coca", taxValue: 10.00 },
+        { id: 18, name: "Bairro da paz", taxValue: 10.00 },
+        { id: 19, name: "Beco da Shell", taxValue: 10.00 },
+        { id: 20, name: "Irajá (MORRO DO MACACO)", taxValue: 10.00 },
+        { id: 21, name: "Laranjal", taxValue: 10.00 },
+        { id: 22, name: "Novo Paraiso", taxValue: 10.00 },
+        { id: 23, name: "Piracanã (ATÉ 29 RUA)", taxValue: 10.00 },
+        { id: 24, name: "REICON", taxValue: 10.00 },
+        { id: 25, name: "Santo Antônio", taxValue: 10.00 },
+        { id: 26, name: "São Francisco (a partir da 4ª rua)", taxValue: 10.00 },
+        { id: 27, name: "Vila Militar", taxValue: 10.00 },
+        
+        // R$ 12,00
+        { id: 28, name: "Açai", taxValue: 12.00 },
+        { id: 29, name: "Beija Flor", taxValue: 12.00 },
+        { id: 30, name: "Belas terras (km6)", taxValue: 12.00 },
+        { id: 31, name: "Buriti", taxValue: 12.00 },
+        { id: 32, name: "Campo belo", taxValue: 12.00 },
+        { id: 33, name: "Cidade nova (JJP)", taxValue: 12.00 },
+        { id: 34, name: "Chico do Leite", taxValue: 12.00 },
+        { id: 35, name: "Jacarézinho", taxValue: 12.00 },
+        { id: 36, name: "Jardim aeroporto (km5)", taxValue: 12.00 },
+        { id: 37, name: "Jardim américa (altos buriti)", taxValue: 12.00 },
+        { id: 38, name: "Maria Magdalena 1 e 2", taxValue: 12.00 },
+        { id: 39, name: "Pérola do tapajós", taxValue: 12.00 },
+        { id: 40, name: "Sol Nascente", taxValue: 12.00 },
+        { id: 41, name: "Vale do piracanã (residêncial)", taxValue: 12.00 },
+        { id: 42, name: "Vale do tapajós", taxValue: 12.00 },
+        { id: 43, name: "Valmirlândia 1 e 2", taxValue: 12.00 },
+        { id: 44, name: "Vitória-régia", taxValue: 12.00 },
+        { id: 45, name: "Viva itaituba (km6)", taxValue: 12.00 },
+        { id: 46, name: "Wirland Freire", taxValue: 12.00 },
+        { id: 47, name: "QUARTEL 53 BIS", taxValue: 12.00 },
     ]
 };
 
