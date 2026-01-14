@@ -192,6 +192,8 @@ function showBairrosList() {
     currentLocation = null;
     
     clienteSearch.classList.add('d-none');
+    enderecosVinculados.classList.add('d-none');
+    taxaUnica.classList.add('d-none');
     destinationSelection.classList.add('d-none');
     typeSelection.classList.add('d-none');
     locationList.classList.add('d-none');
@@ -209,7 +211,7 @@ function showBairrosList() {
         updateBreadcrumb([
             { text: 'Início', active: false, action: showClienteSearch },
             { text: 'Buscar Cliente', active: false, action: showClienteSearch },
-            { text: selectedCliente.name, active: false, action: showDestinationSelection },
+            { text: selectedCliente.name, active: false, action: showClienteSearch },
             { text: typeLabel, active: true }
         ]);
     } else {
@@ -566,7 +568,21 @@ function selectCliente(clienteId) {
     // Verificar se é cliente com endereços vinculados
     else if (cliente.referencia && cliente.referencia === 'ENDERECOS_VINCULADOS') {
         showEnderecosVinculados();
-    } 
+    }
+    // Verificar se é cliente com referência FLORESTA
+    else if (cliente.referencia && cliente.referencia === 'FLORESTA') {
+        showEnderecosVinculados();
+    }
+    // Se referência for CENTRO, mostrar diretamente Centro Comercial
+    else if (cliente.referencia && cliente.referencia === 'CENTRO') {
+        currentType = 'centro-comercial';
+        showBairrosList();
+    }
+    // Se referência for CIDADEALTA, mostrar diretamente Cidade Alta
+    else if (cliente.referencia && cliente.referencia === 'CIDADEALTA') {
+        currentType = 'cidade-alta';
+        showBairrosList();
+    }
     else {
         showDestinationSelection();
     }
@@ -586,7 +602,12 @@ function showEnderecosVinculados() {
     if (selectedCliente) {
         enderecosClienteName.textContent = `Cliente: ${selectedCliente.name}`;
         
-        const enderecos = getEnderecosEspecial(selectedCliente.name);
+        // Tentar obter endereços pelo nome do cliente primeiro, depois pela referência
+        let enderecos = getEnderecosEspecial(selectedCliente.name);
+        if (enderecos.length === 0 && selectedCliente.referencia) {
+            enderecos = getEnderecosByReferencia(selectedCliente.referencia);
+        }
+        
         displayEnderecosVinculados(enderecos);
         enderecosSearch.value = '';
     }
@@ -654,7 +675,12 @@ function filterEnderecosVinculados(searchTerm) {
         return;
     }
     
-    const enderecos = getEnderecosEspecial(selectedCliente.name);
+    // Tentar obter endereços pelo nome do cliente primeiro, depois pela referência
+    let enderecos = getEnderecosEspecial(selectedCliente.name);
+    if (enderecos.length === 0 && selectedCliente.referencia) {
+        enderecos = getEnderecosByReferencia(selectedCliente.referencia);
+    }
+    
     const term = searchTerm.toLowerCase().trim();
     
     if (term === '') {
