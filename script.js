@@ -245,17 +245,17 @@ function createBairroCard(bairro) {
     
     // Definir cor do badge baseado no valor
     let badgeClass = 'bg-primary';
-    if (bairro.taxValue === 7.00) badgeClass = 'bg-dark';
-    else if (bairro.taxValue === 8.00) badgeClass = 'bg-dark';
-    else if (bairro.taxValue === 10.00) badgeClass = 'bg-dark';
-    else if (bairro.taxValue === 12.00) badgeClass = 'bg-dark';
+    if (bairro.taxValue === 7.00) badgeClass = 'bg-success';
+    else if (bairro.taxValue === 8.00) badgeClass = 'bg-info';
+    else if (bairro.taxValue === 10.00) badgeClass = 'bg-warning';
+    else if (bairro.taxValue === 12.00) badgeClass = 'bg-danger';
     
     col.innerHTML = `
         <div class="card bairro-card">
             <div class="card-body">
                 <div class="d-flex justify-content-between align-items-start mb-3">
                     <h5 class="card-title mb-0">
-                        <i class="bi bi-geo-alt-fill text-dark me-2"></i>
+                        <i class="bi bi-geo-alt-fill text-primary me-2"></i>
                         ${bairro.name}
                     </h5>
                 </div>
@@ -502,17 +502,17 @@ function createClienteCard(cliente) {
     col.className = 'col-12 mb-3';
     
     // Mapear referência para cor
-    let badgeClass = 'bg-dark';
+    let badgeClass = 'bg-secondary';
     let referenciaLabel = cliente.referencia;
     
     if (cliente.referencia === 'CENTRO') {
-        badgeClass = 'bg-dark';
+        badgeClass = 'bg-primary';
     } else if (cliente.referencia === 'LIBERDADE') {
-        badgeClass = 'bg-dark';
+        badgeClass = 'bg-info';
     } else if (cliente.referencia === 'CIDADEALTA') {
-        badgeClass = 'bg-dark';
+        badgeClass = 'bg-success';
     } else if (cliente.referencia === 'FLORESTA') {
-        badgeClass = 'bg-dark';
+        badgeClass = 'bg-warning';
     }
     
     col.innerHTML = `
@@ -521,7 +521,7 @@ function createClienteCard(cliente) {
                 <div class="d-flex justify-content-between align-items-center">
                     <div class="flex-grow-1">
                         <h5 class="card-title mb-1">
-                            <i class="bi bi-building text-dark me-2"></i>
+                            <i class="bi bi-building text-primary me-2"></i>
                             ${cliente.name}
                         </h5>
                         <p class="card-text mb-0">
@@ -532,7 +532,7 @@ function createClienteCard(cliente) {
                         </p>
                     </div>
                     <div class="ms-3">
-                        <button class="btn btn-dark btn-select-cliente" data-cliente-id="${cliente.id}">
+                        <button class="btn btn-primary btn-select-cliente" data-cliente-id="${cliente.id}">
                             <i class="bi bi-check-circle me-1"></i> Selecionar
                         </button>
                     </div>
@@ -641,18 +641,18 @@ function createEnderecoVinculadoCard(endereco) {
     col.className = 'col-12 col-md-6 col-lg-4';
     
     // Definir cor do badge baseado no valor
-    let badgeClass = 'bg-dark';
-    if (endereco.taxValue === 7.00) badgeClass = 'bg-dark';
-    else if (endereco.taxValue === 8.00) badgeClass = 'bg-dark';
-    else if (endereco.taxValue === 10.00) badgeClass = 'bg-dark';
-    else if (endereco.taxValue === 12.00) badgeClass = 'bg-dark';
+    let badgeClass = 'bg-primary';
+    if (endereco.taxValue === 7.00) badgeClass = 'bg-success';
+    else if (endereco.taxValue === 8.00) badgeClass = 'bg-info';
+    else if (endereco.taxValue === 10.00) badgeClass = 'bg-warning';
+    else if (endereco.taxValue === 12.00) badgeClass = 'bg-danger';
     
     col.innerHTML = `
         <div class="card bairro-card">
             <div class="card-body">
                 <div class="d-flex justify-content-between align-items-start mb-3">
                     <h5 class="card-title mb-0">
-                        <i class="bi bi-geo-alt-fill text-dark me-2"></i>
+                        <i class="bi bi-geo-alt-fill text-primary me-2"></i>
                         ${endereco.name}
                     </h5>
                 </div>

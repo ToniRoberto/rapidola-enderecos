@@ -270,7 +270,7 @@ header {
   src: url(fonts/montserrat/Montserrat-ExtraLight.otf); /* url of the font */
 }
 #header{
-    background-color: #000;
+    background-color: #02a3ba;
     font-family: fontpadrao;
 }
 .addBtn{
