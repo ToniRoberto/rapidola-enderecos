@@ -146,6 +146,14 @@ function getBairrosByType(type) {
     return [];
 }
 
+// Função para normalizar strings removendo acentos
+function normalizeString(str) {
+    if (!str) return '';
+    return str.toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '');
+}
+
 // Função para buscar bairros por nome
 function searchBairros(searchTerm, type) {
     const bairros = getBairrosByType(type);
@@ -153,9 +161,9 @@ function searchBairros(searchTerm, type) {
         return bairros;
     }
     
-    const term = searchTerm.toLowerCase().trim();
+    const normalizedTerm = normalizeString(searchTerm.trim());
     return bairros.filter(bairro => 
-        bairro.name.toLowerCase().includes(term)
+        normalizeString(bairro.name).includes(normalizedTerm)
     );
 }
 
@@ -1019,9 +1027,9 @@ function searchClientes(searchTerm) {
         return [];
     }
     
-    const term = searchTerm.toLowerCase().trim();
+    const normalizedTerm = normalizeString(searchTerm.trim());
     return clientes.filter(cliente => 
-        cliente.name.toLowerCase().includes(term)
+        normalizeString(cliente.name).includes(normalizedTerm)
     );
 }
 

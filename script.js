@@ -434,33 +434,41 @@ function createAddressCard(address) {
     return col;
 }
 
+// Função para normalizar strings removendo acentos
+function normalizeString(str) {
+    if (!str) return '';
+    return str.toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '');
+}
+
 // Filtrar endereços
 function filterAddresses(searchTerm) {
     if (!currentLocation || !currentLocation.addresses) {
         return;
     }
     
-    const term = searchTerm.toLowerCase().trim();
+    const normalizedTerm = normalizeString(searchTerm.trim());
     
-    if (term === '') {
+    if (normalizedTerm === '') {
         displayAddresses(currentLocation.addresses);
         return;
     }
     
     const filtered = currentLocation.addresses.filter(address => {
-        const searchableText = `
+        const searchableText = normalizeString(`
             ${address.street}
             ${address.neighborhood}
             ${address.city}
             ${address.state}
             ${address.zipCode}
             ${address.additionalInfo || ''}
-        `.toLowerCase();
+        `);
         
-        return searchableText.includes(term);
+        return searchableText.includes(normalizedTerm);
     });
     
-    displayAddresses(filtered, term);
+    displayAddresses(filtered, normalizedTerm);
 }
 
 // Buscar clientes (handler)
@@ -681,18 +689,18 @@ function filterEnderecosVinculados(searchTerm) {
         enderecos = getEnderecosByReferencia(selectedCliente.referencia);
     }
     
-    const term = searchTerm.toLowerCase().trim();
+    const normalizedTerm = normalizeString(searchTerm.trim());
     
-    if (term === '') {
+    if (normalizedTerm === '') {
         displayEnderecosVinculados(enderecos);
         return;
     }
     
     const filtered = enderecos.filter(endereco => 
-        endereco.name.toLowerCase().includes(term)
+        normalizeString(endereco.name).includes(normalizedTerm)
     );
     
-    displayEnderecosVinculados(filtered, term);
+    displayEnderecosVinculados(filtered, normalizedTerm);
 }
 
 // Mostrar tela de taxa única
