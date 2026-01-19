@@ -467,10 +467,10 @@ const enderecosEspecial = {
         { id: 16, name: "Jardim das araras", taxValue: 8.00 },
         { id: 17, name: "Liberdade", taxValue: 8.00 },
         { id: 18, name: "São Francisco (a partir da 4ª rua)", taxValue: 8.00 },
+        { id: 11, name: "Vale do piracanã (residêncial)", taxValue: 8.00 },
         
         // R$ 10,00
-        { id: 20, name: "Bairro da coca", taxValue: 10.00 },
-        { id: 11, name: "Vale do piracanã (residêncial)", taxValue: 10.00 },
+        { id: 20, name: "Bairro da coca", taxValue: 10.00 },        
         { id: 12, name: "Vale do tapajós", taxValue: 10.00 },
         { id: 13, name: "Valmirlândia 1 e 2", taxValue: 10.00 },
         { id: 21, name: "Bairro da paz", taxValue: 10.00 },
@@ -1037,6 +1037,7 @@ function searchClientes(searchTerm) {
 function getAllClientes() {
     return clientes;
 }
+
 
 
 
